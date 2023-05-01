@@ -8,13 +8,13 @@ This whole project will be written entirely in scala 3 simply because its awesom
 Clone this project into you computer by using this code:
 
 ```bash
-> git clone ....
+> git clone https://github.com/hkateu/MyHttp4sCode.git
 ```
 
 Navigate to the project directory
 
 ```bash
-> cd http
+> cd MyHttp4sCode
 ```
 
 Execute the sbt command to make sure it's working, this will take you to the sbt shell
@@ -26,18 +26,24 @@ Execute the sbt command to make sure it's working, this will take you to the sbt
 Each section is a standalone module, you can list the modules, the following way
 
 ```bash
-sbt projects
+sbt:root> projects
 ```
 
 The default module is `root` module which is an aggregate of all the rest, once you compile it all the necessary libraries will download for the whole project, you can do this by running the compile command.
 
 ```bash
-sbt root compile
+sbt:root> compile
+```
+
+Running root should produce the following output:
+
+```bash
+Scala3 Http4s code examples
 ```
 
 To execute code for a particular module, for example `service`, one would run the following sequence of commands
 
 ```bash
-sbt project service
-sbt run
+sbt:root> project service
+sbt:service>
 ```

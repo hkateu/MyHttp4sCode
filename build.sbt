@@ -20,10 +20,15 @@ val circeLibs =  Seq(
   "io.circe" %% "circe-parser"
 ).map(_ % CirceVersion)
 
-lazy val root = project
-  .in(file("."))
+mainClass in (Compile, run) := Some("Main")
+
+lazy val root = (project in file("."))
+  .aggregate(main,service)
+
+lazy val main = project
+  .in(file("main"))
   .settings(
-    name := "http",
+    name := "main",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := scala3Version,
     libraryDependencies += munit

@@ -1,2 +1,4 @@
-@main def Main = 
-    println("Scala3 Http4s code examples")
+object Main{
+    def main(args: Array[String]): Unit = 
+        println("Scala3 Http4s code examples")
+}
