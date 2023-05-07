@@ -20,10 +20,10 @@ val circeLibs =  Seq(
   "io.circe" %% "circe-parser"
 ).map(_ % CirceVersion)
 
-mainClass in (Compile, run) := Some("Main")
+Compile / run / mainClass := Some("Main")
 
 lazy val root = (project in file("."))
-  .aggregate(main,service)
+  .aggregate(main,service,dsl)
 
 lazy val main = project
   .in(file("main"))
@@ -46,5 +46,46 @@ lazy val service = project
       http4sDsl,
       munit
     ) ++ circeLibs
+  )
 
+  lazy val dsl = project
+  .in(file("dsl"))
+  .settings(
+    name := "dsl",
+    version := "0.1.0-SNAPSHOT",
+    scalaVersion := scala3Version,
+    libraryDependencies ++= Seq(
+      emberServer,
+      http4sCirce,
+      http4sDsl,
+      munit
+    ) ++ circeLibs
+  )
+
+  lazy val middleware = project
+  .in(file("middleware"))
+  .settings(
+    name := "middleware",
+    version := "0.1.0-SNAPSHOT",
+    scalaVersion := scala3Version,
+    libraryDependencies ++= Seq(
+      emberServer,
+      http4sCirce,
+      http4sDsl,
+      munit
+    ) ++ circeLibs
+  )
+
+  lazy val authentication = project
+  .in(file("authentication"))
+  .settings(
+    name := "authentication",
+    version := "0.1.0-SNAPSHOT",
+    scalaVersion := scala3Version,
+    libraryDependencies ++= Seq(
+      emberServer,
+      http4sCirce,
+      http4sDsl,
+      munit
+    ) ++ circeLibs
   )
