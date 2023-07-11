@@ -252,5 +252,5 @@ object Dsl extends IOApp:
                 case None => BadRequest("missing number") 
     }
 
-    override def run(args: List[String]): IO[ExitCode] = greetingWithIdResp.as(ExitCode.Success)
+    override def run(args: List[String]): IO[ExitCode] = program3.as(ExitCode.Success)
 

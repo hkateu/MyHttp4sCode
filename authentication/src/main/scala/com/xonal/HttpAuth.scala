@@ -12,6 +12,10 @@ import com.comcast.ip4s.*
 import org.typelevel.ci.CIString
 import org.http4s.Credentials
 import org.http4s.headers.Authorization
+import scala.io.Codec
+import scala.util.Random
+import org.http4s.headers.Cookie
+import org.http4s.server.middleware.authentication.{DigestAuth}
 
 object HttpAuth extends IOApp:
     case class User(id: Long, name: String)
@@ -22,14 +26,21 @@ object HttpAuth extends IOApp:
     // [User] =>> OptionT[IO,User],
     val authUser: Kleisli[[User] =>> OptionT[IO,User], Request[IO], User] = Kleisli{req => 
         // val authHeader = req.headers.get(Credentials.Token(CIString("Authorization")))
-        val authHeader = req.headers.get[Authorization]
+        val authHeader: Option[Authorization] = req.headers.get[Authorization]
         OptionT.liftF(IO{
             authHeader.flatMap{
-                case Authorization(BasicCredentials(value)) =>  Some(User(1,value._1))
+                case Authorization(BasicCredentials(value)) =>  Some(User(1,value._2))
                 case _ => Some(User(0,"ErrorName"))
         }.get})
     }
 
+    val funcPass: String => IO[Option[(User, String)]] = (hashedVal: String) => 
+        hashedVal match
+            case "Herbert" => IO(Some(User(1,"Herbert"),"password"))
+            case _ => IO(None)
+
+    val dig:AuthMiddleware[IO, User] = DigestAuth[IO,User]("localhost:8080/welcome", funcPass)
+    
     val middleware: AuthMiddleware[IO,User] = 
         AuthMiddleware(authUser)
 
@@ -41,6 +52,9 @@ object HttpAuth extends IOApp:
     
     val service: HttpRoutes[IO] = 
         middleware(authedRoutes)
+
+    val digestService: HttpRoutes[IO] = 
+        dig(authedRoutes)
 
     //composing authenticated routes
     val spanishRoutes: AuthedRoutes[User, IO] = 
@@ -98,6 +112,39 @@ object HttpAuth extends IOApp:
     val authMiddleware: AuthMiddleware[IO,User] = AuthMiddleware(authUserEither, onFailure)
 
     val serviceKleisli: HttpRoutes[IO] = authMiddleware(authedRoutes)
+
+
+    //Implementing authUser
+    //cookies
+    val sessionKey = Codec.toUTF8(Random.alphanumeric.take(20).mkString(""))
+   
+    val clock = java.time.Clock.systemUTC  
+
+    //figure out how to do a request form
+    def verifyLogin(request: Request[IO]): IO[Either[String,User]] = ???
+
+    // val logIn: Kleisli[IO, Request[IO], Response[IO]] = Kleisli({request =>
+    //     verifyLogin(request: Request[IO]).flatMap(_ match
+    //         case Left(error) => 
+    //             Forbidden(error)
+    //         case Right(user) => 
+    //             val message = "signedToken"
+    //             Ok("Logged in!").map(_.addCookie(ResponseCookie("authcookie", message)))
+    //     )    
+    // })
+
+    //retrieve value in authUser
+    //  def retrieveUser: Kleisli[IO, Long, User] = Kleisli(id => IO(???))
+    // val authUserCookie: Kleisli[IO, Request[IO], Either[String,User]] = Kleisli({request =>
+    //     val message = 
+    //         for 
+    //             header <- request.headers.get[Cookie].toRight("Cookie parsing error")
+    //             cookie <- header.values.toList.find(_.name == "authcookie")
+    //             token <- Right("validatedSignedToken")
+    //             message <- Either.catchOnly[NumberFormatException](token).leftMap(_.toString)
+    //         yield message
+    //     message.traverse(retrieveUser.run)
+    // })
 
     val server = EmberServerBuilder
         .default[IO]

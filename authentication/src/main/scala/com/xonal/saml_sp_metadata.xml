@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="36bfdf3c-ab36-4b92-aeb0-08de3d44d873" entityID="https://sso.online.tableau.com/public/sp/metadata/36bfdf3c-ab36-4b92-aeb0-08de3d44d873">
+    <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <md:KeyDescriptor use="encryption">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIFqDCCA5CgAwIBAgIGAYiQNUsUMA0GCSqGSIb3DQEBCwUAMGwxOzA5BgNVBAsMMmNvbS50YWJs
+ZWF1c29mdHdhcmUuc2l0ZXNhbWwuY29yZS51dGlsLkNyeXB0b1V0aWxzMS0wKwYDVQQDDCQzNmJm
+ZGYzYy1hYjM2LTRiOTItYWViMC0wOGRlM2Q0NGQ4NzMwHhcNMjMwNjA1MTAxNjMxWhcNMzMwNjAz
+MTAxNjMxWjBsMTswOQYDVQQLDDJjb20udGFibGVhdXNvZnR3YXJlLnNpdGVzYW1sLmNvcmUudXRp
+bC5DcnlwdG9VdGlsczEtMCsGA1UEAwwkMzZiZmRmM2MtYWIzNi00YjkyLWFlYjAtMDhkZTNkNDRk
+ODczMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAub9V7Td0orpMJnn9OAsY8elRrkWe
+/BGFrg+en22YqqrGbq+XbAa6SovvsI9XCMdEemxW0caElGYt6+W7qYqE/rQS0ltM2qv471lhlof6
+IGPCJl8t0pgF1do/XPTdmMJGN7I1NALaD72BwzO+Twb1gwj2Kv0vKoyYVP3JFKM1MJ1Dm9zzmhge
+LVa6L9X0yd7zsc6G4TH9DQQTEtfTq563YpIZ+2p22MgczRQ3aBvMm7evAUssQJSKpavMN/CNWhut
+sT/fP5P9ednsKQDSRBINzhiuqckEPPDDOfbzU10sshMsLaao2k1VIUYM++FBW2YJgmciAuCQdTvX
+lViJdvDSAPP1beKGe7AmELt1eQBoedO2YMk4kc6JxMklXlf87HNJ3uoZmr8uCvMhj99q2SX8ehJa
+XvWrWDlAswZkVnkQToKIBWr56l695ySSlhAPUnCNT/S2O1lfk+rO+48qNhxuAe0Ev/kud3wuSaQ6
+sO3So274XKXtqCNkBenUtEyBSrgULwmv2gnCR0IDHRIiH7mlXQjFLqLSKPA7qaScRmr++9pIrhzO
+R9XBxRgAoBbt2N2Icc+xpUlVfPf3ZMy/CWedVUn6ooEsAgfvzWpig2zEYsrc1fCXLxq0w95wcZl/
+KW69uUGF7K/SNzF+rIhDJYSS84FzoZGSvf7cLMTOmpdjV1MCAwEAAaNQME4wDAYDVR0TAQH/BAIw
+ADAdBgNVHQ4EFgQUoEMzB7TjuD40RxRx1P4Umv3H5/owHwYDVR0jBBgwFoAUoEMzB7TjuD40RxRx
+1P4Umv3H5/owDQYJKoZIhvcNAQELBQADggIBAGAFF1tvAQm96Wx0wp3rfZ0mQEz1umLTW8LKiKmE
+/LqddCLzb4ZDQAaNEAKO6z6H6WmiB44zWrsu5M3yoSE6NJ0NY2dkMWqGF+M2guNlKbSy0uCPbW42
+17OpSw72Gc/F1nq6Yrb1IKQnv3Pun8+SX3Yzi1CXqqngWqcfK/f6rZxY7rv3wkraNpwhydqaLCTg
+iVSFB4IIVZDt3uPcv5ZbTGySwIwn5BXkyNW5ysSHUPK2Hcbkx+KfyTqOC4/3TNbZtLu6E5rpPNdH
+RkA/GIttJI8/sZPg4vgl2QRcWK2HikzCPQYyyvgzppVa8KTsMbhGs0gEjsPqF2ygNDHb0kUiy5Tx
+KTRP09Bv79jN7WY3186Qq/wLF7qfUUj9e9T3jy7lSdpID0ljdG5JY6J6AObVyovEpTuRiNqFDKEe
+pSoIVky0VzbFMo7SuLVvhw+mE1s1L5LD95DOdoFYyePxlbjD8W1fRa4O+zWK9cXNV7zpcGwceloM
+3FWBO63GCSb2lSc5fWCOgyQDW8aLVAADW1Nucti+2Abv/x+VsNbrgBjfwraTMMIr/Iv5MyWLK9SF
+rIRCI828trlMHw2gWrP2qQn1vQEQ27S5/+k919JmlV1Sr7BEFvlii1M0MQ49heAEYfl9iKxlWb3q
+yu26bvcBdqXEE8DuS2e/reLrOfGMoWQqwGJp</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIFqDCCA5CgAwIBAgIGAYiQNUsUMA0GCSqGSIb3DQEBCwUAMGwxOzA5BgNVBAsMMmNvbS50YWJs
+ZWF1c29mdHdhcmUuc2l0ZXNhbWwuY29yZS51dGlsLkNyeXB0b1V0aWxzMS0wKwYDVQQDDCQzNmJm
+ZGYzYy1hYjM2LTRiOTItYWViMC0wOGRlM2Q0NGQ4NzMwHhcNMjMwNjA1MTAxNjMxWhcNMzMwNjAz
+MTAxNjMxWjBsMTswOQYDVQQLDDJjb20udGFibGVhdXNvZnR3YXJlLnNpdGVzYW1sLmNvcmUudXRp
+bC5DcnlwdG9VdGlsczEtMCsGA1UEAwwkMzZiZmRmM2MtYWIzNi00YjkyLWFlYjAtMDhkZTNkNDRk
+ODczMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAub9V7Td0orpMJnn9OAsY8elRrkWe
+/BGFrg+en22YqqrGbq+XbAa6SovvsI9XCMdEemxW0caElGYt6+W7qYqE/rQS0ltM2qv471lhlof6
+IGPCJl8t0pgF1do/XPTdmMJGN7I1NALaD72BwzO+Twb1gwj2Kv0vKoyYVP3JFKM1MJ1Dm9zzmhge
+LVa6L9X0yd7zsc6G4TH9DQQTEtfTq563YpIZ+2p22MgczRQ3aBvMm7evAUssQJSKpavMN/CNWhut
+sT/fP5P9ednsKQDSRBINzhiuqckEPPDDOfbzU10sshMsLaao2k1VIUYM++FBW2YJgmciAuCQdTvX
+lViJdvDSAPP1beKGe7AmELt1eQBoedO2YMk4kc6JxMklXlf87HNJ3uoZmr8uCvMhj99q2SX8ehJa
+XvWrWDlAswZkVnkQToKIBWr56l695ySSlhAPUnCNT/S2O1lfk+rO+48qNhxuAe0Ev/kud3wuSaQ6
+sO3So274XKXtqCNkBenUtEyBSrgULwmv2gnCR0IDHRIiH7mlXQjFLqLSKPA7qaScRmr++9pIrhzO
+R9XBxRgAoBbt2N2Icc+xpUlVfPf3ZMy/CWedVUn6ooEsAgfvzWpig2zEYsrc1fCXLxq0w95wcZl/
+KW69uUGF7K/SNzF+rIhDJYSS84FzoZGSvf7cLMTOmpdjV1MCAwEAAaNQME4wDAYDVR0TAQH/BAIw
+ADAdBgNVHQ4EFgQUoEMzB7TjuD40RxRx1P4Umv3H5/owHwYDVR0jBBgwFoAUoEMzB7TjuD40RxRx
+1P4Umv3H5/owDQYJKoZIhvcNAQELBQADggIBAGAFF1tvAQm96Wx0wp3rfZ0mQEz1umLTW8LKiKmE
+/LqddCLzb4ZDQAaNEAKO6z6H6WmiB44zWrsu5M3yoSE6NJ0NY2dkMWqGF+M2guNlKbSy0uCPbW42
+17OpSw72Gc/F1nq6Yrb1IKQnv3Pun8+SX3Yzi1CXqqngWqcfK/f6rZxY7rv3wkraNpwhydqaLCTg
+iVSFB4IIVZDt3uPcv5ZbTGySwIwn5BXkyNW5ysSHUPK2Hcbkx+KfyTqOC4/3TNbZtLu6E5rpPNdH
+RkA/GIttJI8/sZPg4vgl2QRcWK2HikzCPQYyyvgzppVa8KTsMbhGs0gEjsPqF2ygNDHb0kUiy5Tx
+KTRP09Bv79jN7WY3186Qq/wLF7qfUUj9e9T3jy7lSdpID0ljdG5JY6J6AObVyovEpTuRiNqFDKEe
+pSoIVky0VzbFMo7SuLVvhw+mE1s1L5LD95DOdoFYyePxlbjD8W1fRa4O+zWK9cXNV7zpcGwceloM
+3FWBO63GCSb2lSc5fWCOgyQDW8aLVAADW1Nucti+2Abv/x+VsNbrgBjfwraTMMIr/Iv5MyWLK9SF
+rIRCI828trlMHw2gWrP2qQn1vQEQ27S5/+k919JmlV1Sr7BEFvlii1M0MQ49heAEYfl9iKxlWb3q
+yu26bvcBdqXEE8DuS2e/reLrOfGMoWQqwGJp</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sso.online.tableau.com/public/sp/SLO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873"/>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sso.online.tableau.com/public/sp/SLO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873"/>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://sso.online.tableau.com/public/sp/SLO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873"/>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sso.online.tableau.com/public/sp/SSO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873" index="0" isDefault="true"/>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sso.online.tableau.com/public/sp/SSO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873" index="1" isDefault="false"/>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://sso.online.tableau.com/public/sp/SSO/36bfdf3c-ab36-4b92-aeb0-08de3d44d873" index="2" isDefault="false"/>
+    </md:SPSSODescriptor>
+</md:EntityDescriptor>
