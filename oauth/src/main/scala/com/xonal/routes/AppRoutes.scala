@@ -27,7 +27,6 @@ object GithubRoutes:
                 StaticFile.fromPath(Path("oauth/src/main/scala/com/xonal/index.html"), Some(request))
                 .getOrElseF(NotFound()) // In case the file doesn't exist
             case GET -> Root / "callback" :? GithubTokenQueryParamMatcher(code) => 
-                //{"access_token":"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","token_type":"bearer","scope":"user:email"}
                 fetchJsonString(code, config.api.key, config.api.secret.value).flatMap{token =>
                     decode[GithubResponse](token) match
                         case Right(payload) =>
