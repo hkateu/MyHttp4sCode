@@ -69,9 +69,8 @@ object OauthImpl {
     getJsonString(req)
   }
 
-  def getOauthResults[F[_]: Async](code: String): F[String] =
+  def getOauthResults[F[_]: Async](code: String, config: Config): F[String] =
     for
-      config <- configuration.load[F]
       decodedJson <- fetchJsonString[F](code, config).map(decodeJson(_))
       githubDetails <- decodedJson match
         case Right(v)  => fetchGithubDetails(v.accessToken)

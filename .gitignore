@@ -34,3 +34,9 @@ metals.sbt
 #optimizations
 .sbtopts
 sendgrid.env
+
+#oauth resources
+oauth/source/main/resources/*
+
+#authentication resources
+authentication/main/resources/*

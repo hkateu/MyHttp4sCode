@@ -1,4 +1,4 @@
-val scala3Version = "3.2.2"
+val scala3Version = "3.3.0"
 
 val Http4sVersion = "0.23.18"
 val MunitVersion = "0.7.29"
@@ -45,7 +45,9 @@ val circeLibs =  Seq(
 Compile / run / mainClass := Some("Main")
 
 lazy val root = (project in file("."))
-  .aggregate(main,service,dsl, authentication)
+  .aggregate(main,service,dsl,middleware,authentication,otpauth,gzip,hsts,
+  staticFiles,httpClient,entityHandling,streaming,jsonHandling,testing
+  ,urihandling,httpmethods,errorhandling,smiddleware,oauth)
 
 lazy val main = project
   .in(file("main"))
@@ -332,6 +334,7 @@ lazy val smiddleware = project
       http4sDsl,
       http4sCirce,
       ciris,
-      cirisCirce
+      cirisCirce,
+      logbackClassic
     ) ++ circeLibs
   )

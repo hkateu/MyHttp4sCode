@@ -8,14 +8,11 @@ import com.xonal.routes.GithubRoutes.githubRoutes
 import org.http4s.server.Server
 
 object OauthMain extends IOApp {
-  def program[F[_]: Async]: Stream[F, Resource[F, Server]] =
+  def program:IO[Resource[IO, Server]] =
     for
-      sconfig <- Stream.eval(configuration.load[F])
-      server <- ServerUtil.oauthServer(sconfig, githubRoutes)
+      config <- configuration.load[IO]
+      server <- IO.apply(ServerUtil.oauthServer[IO](config, githubRoutes(config)))
     yield server
     
-  def run(args: List[String]): IO[ExitCode] =
-    program[IO].compile.last
-      .flatMap(_.get.use(_ => IO.never))
-      .as(ExitCode.Success)
+  def run(args: List[String]): IO[ExitCode] = program.flatMap(_.use(_ => IO.never)).as(ExitCode.Success)
 }

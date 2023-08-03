@@ -12,14 +12,11 @@ object ServerUtil {
   def oauthServer[F[_]: Async](
       config: Config,
       service: HttpRoutes[F]
-  ): Stream[F, Resource[F, Server]] =
-    Stream(
-      EmberServerBuilder
-        .default[F]
-        .withHost(config.server.hostValue)
-        .withPort(config.server.portValue)
-        .withHttpApp(service.orNotFound)
-        .build
-    )
+  ): Resource[F, Server] =
+    EmberServerBuilder
+      .default[F]
+      .withHost(config.server.hostValue)
+      .withPort(config.server.portValue)
+      .withHttpApp(service.orNotFound)
+      .build
 }
-
