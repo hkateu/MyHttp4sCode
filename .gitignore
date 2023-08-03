@@ -36,7 +36,7 @@ metals.sbt
 sendgrid.env
 
 #oauth resources
-oauth/source/main/resources/*
+oauth/src/main/resources/*
 
 #authentication resources
-authentication/main/resources/*
+authentication/src/main/resources/*
